@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>HTMLとWebデザインについて</title>
+        <meta name="discription" content="第3回講義用資料">
+
+    <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="css/style.css" rel="stylesheet">
+
+    <!-- FAVICON -->
+        <link rel="icon" type="image/png" href="image/cat.png">
+    
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+    <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <!-- image enlargement -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div class="home-content wrapper">
+            <h2 class="page-title">-HTMLとWebデザイン-</h2>
+            <p>今回は、HTMLの解説に加えてWebデザインについて解説していきます。<br>
+                CSSもちょっとだけ解説します。</p>
+        </div>
+
+        <div class="main-content wrapper">
+            <article>
+
+            <!-- 1章 -->
+                <header class="chapter-title">
+                    <h2 id="chapter1">1. そもそもHTMLとは？</h2>
+                </header>
+                <p>　HTMLとはWebページを作る上で<strong>土台となるファイルを作成する</strong>言語です。
+                    表示させたい文章をタグを使って書かれます。
+                    端的にいうと、Webページの中身を設定するのがHTMLです。<br>
+                    　➥タグ：見出しやリンクなどを指定して、
+                        コンピューターがそのページの構造を理解できるようにする役割を持つ</p>
+                <a href="image/tag.png" data-lightbox="group"><img src="image/tag.png" alt="タグの例"></a>
+                <p class="img-title">タグの書き方の例(本サイトのHTMLファイル)。img や p などがタグにあたる。</p>
+                <p class="sub-content">補足: ちなみに、中身を設定するHTMLに対して、見た目を設定するのがCSSです。
+                    CSSを設定しないと、Webページは非常に簡素な見た目となってしまいます。</p>
+
+            <!-- 2章 -->
+                <header class="chapter-title">
+                    <h2 id="chapter2">2. HTMLを体験しよう</h2>
+                </header>
+                <p>　早速ですが、HTMLでWebサイトを作ってみましょう！<br>
+                    　任意のフォルダでVScodeを起動して、index.htmlというファイルを作成してください。
+                    ファイルを作成したら、以下のコードをindex.htmlに貼り付けて<strong>保存しましょう</strong>
+                    （「ここに○○を入力」の部分は自由に書き変えていただいて構いません）。</p>
+<pre>
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;ここにタイトルを入力&lt;/title&gt;
+        &lt;meta name=&quot;discription&quot; content=&quot;体験用ページ&quot;&gt;
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;h1&gt;ここに見出しを入力&lt;/h1&gt;
+        &lt;p&gt;ここに本文を入力&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+                <div class="width-line">
+                    <p>　保存後、index.htmlを右クリックし
+                        <strong>Show in Browser</strong>をクリックして実際の画面を確認してみましょう。
+                        上手くできていれば、画像のように表示されるはずです。<br>
+                        （画像のフォントが違うのは気にしないで下さい...）</p>
+                    <a href="image/first-web.png" data-lightbox="group"><img src="image/first-web.png"></a>
+                </div>
+                <p>「取り敢えず出来たけど何書いてるか分からん！」って方もいると思うので、
+                        軽くですが先ほどのコードを解説します。</p>
+
+            <!-- 3章 -->
+                <header class="chapter-title">
+                    <h2 id="chapter3">3. HTMLの骨組み</h2>
+                </header>
+                <p>この章で解説する内容は、Webページを表示するための<strong>必須内容</strong>です。
+                    これらを記述しないとうまく表示されない場合があるので、必ず記述しましょう。</p>
+                <div class="list">
+                    <ul>
+                        <li>&lt;!DOCTYPE html&gt;<br>
+                            &lt;!DOCTYPE html&gt;はDoctype（ドクタイプ）宣言と言い、
+                            どのバージョンで作られたかや、どの仕様に合わせて作成されたかの宣言を行っています。
+                            htmlは、現在主流となっているHTML5の事を指します。</li>
+                        <li>&lt;html lang=&quot;ja&quot;&gt;～&lt;/html&gt;<br>
+                            これはドクタイプ宣言のすぐ後に書かれ、HTMLの文書であることを表しています。
+                            lang=jaの部分は、文書の言語が日本語であることを示しています。</li>
+                        <li>&lt;head&gt;～&lt;/head&gt;<br>
+                            この部分には、ページのタイトルや外部ファイルのリンクなど、
+                            ページの情報を記述します。</li>
+                        <li>&lt;meta charset=&quot;utf-8&quot;&gt;<br>
+                            文字コードをUTF-8にするという指定です。文字化け対策。</li>
+                        <li>&lt;title&gt;～&lt;/title&gt;<br>
+                            ページのタイトルを記述します。ブラウザ名や、検索時のサイトのページタイトルになります。</li>
+                        <li>&lt;body&gt;～&lt;/body&gt;<br>
+                            HTML文書の本体部分です。ここにコンテンツを記述し、ブラウザ上に表示させます。</li>
+                        <li class="sub-content">&lt;meta name=&quot;discription&quot; content=&quot;～&quot;&gt;<br>
+                            ページの説明を記載する部分で、ページタイトルと共に表示される内容です。
+                            必須ではありませんが、記述するとクリック率が向上したりするので書いた方が良いです。</li>
+                    </ul>
+                    <a href="image/head.png" data-lightbox="group"><img src="image/head.png" alt="headの例"></a>
+                    <p class="img-title">head部分に書く内容の例。画像ではファビコンやリセットCSSなども記述しています。<br>
+                        (調べたらすぐに出るはずなんで気になる人は検索してみてください)
+                    </p>
+                </div>
+
+            <!-- 4章 -->
+                <header class="chapter-title">
+                    <h2 id="chapter4">4. Webデザインとは？</h2>
+                </header>
+                <p>　Webデザインとは、Webページの見た目に関する部分を制作することを意味します。
+                    「見た目に関する部分」と言われると、「カッコいい」「かわいい」などの
+                    『オシャレさ』を追及する、と勘違いしてしまうかもしれません。<br><br>
+                    　しかし、オシャレさを追求するあまり、読み手に伝えたい内容が伝わらなければ本末転倒です。
+                    「見た目に関する部分」とは、オシャレさの他に読み手に伝えたいことを
+                    正しく伝えることも含まれます。
+                    デザインとは<strong>伝えるための手段</strong>で、オシャレに装飾することだけではないのです。<br></p>
+                    <div class="list">
+                        <ul>
+                            　ここからはいくつか注意する点を解説しながら、実際にCSSファイルを用いて体験していきます。
+                            同じフォルダ内に、style.cssというファイルを作成して下さい。
+                            <li><strong>文字の大きさ、太さ、フォント</strong><br>
+                                ページの文字が極端に小さかったり、太い字で書かれていたり、
+                                読みにくいフォントで書かれていたらどう思いますか？
+                                そんなページに出会ったら即別のページを探すと思います。<br>
+                                <a href="image/unbalance.png" data-lightbox="group"><img class="top-margin" src="image/unbalance.png" alt="サイズ"></a>
+                                <p class="img-title">あまりにも極端な例。仮にこんなページたまったもんじゃないですね。</p>
+                                以下に画像のようなサンプルコードを示すので、いじってみて程よい文字の設定を見つけてみて下さい。</li>
+                                <input id="acd-check1" class="acd-check" type="checkbox">
+                                <label class="acd-label" for="acd-check1">HTMLファイル</label>
+                                <div class="acd-content">
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;サンプルコードです&lt;/title&gt;
+        &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;h1&gt;大きさはfont-sizeで指定します。&lt;/h1&gt;
+        &lt;p&gt;太さはfont-weightで指定します。&lt;/p&gt;
+        &lt;div&gt;フォントはfont-familyで指定します。&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                                <input id="acd-check2" class="acd-check" type="checkbox">
+                                <label class="acd-label" for="acd-check2">CSSファイル</label>
+                                <div class="acd-content">
+                                    <pre><code>h1 {
+    font-size: 2rem;
+}
+p {
+    font-weight: bold;
+}
+div {
+    font-family: "Yu Gothic Medium", "游ゴシック Medium";
+}</code></pre></div>
+
+                            <li><strong>色合いに注意する</strong><br>
+                                色合いが悪い例として、以下に示すような画像が挙げられます。<br>
+                                <img class="top-margin" src="image/hard-to-see1.png" alt="見づらい例">
+                                <img src="image/hard-to-see2.png" alt="良くない例"><br>
+                                　前述の通り、文章が読みにくいと読み手はすぐにページを離れてしまいます。
+                                画像は極端な例ですが、読みにくい色合いは意外と存在します。
+                                読み手が読んでいても疲れない色合いで構成しましょう。
+                                </li>
+                                <input id="acd-check3" class="acd-check" type="checkbox">
+                                <label class="acd-label" for="acd-check3">HTMLファイル</label>
+                                <div class="acd-content">
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;一枚目の画像です&lt;/title&gt;
+        &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;h1&gt;黒背景に灰色の文字で入力しています。&lt;/h1&gt;
+        &lt;p&gt;非常に文字が読みずらい事が分かると思います。&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                                <input id="acd-check4" class="acd-check" type="checkbox">
+                                <label class="acd-label" for="acd-check4">CSSファイル</label>
+                                <div class="acd-content">
+                                    <pre><code>html {
+    background-color: black;
+    color: #444;
+}
+/* これはコメントです。
+   二枚目の画像はbackground-colorをyellow、colorをmagentに指定しています。 */</code></pre>
+                                </div>
+
+                            <li><strong>空白が雑</strong><br>
+                                空白が適切に設けられていないと、読み間違えが生じ
+                                正しく読んでくれない可能性があります。<br>
+                                <a href="image/non-space.png" data-lightbox="group"><img class="top-margin" src="image/non-space.png" alt="余白なし"></a>
+                                <p class="img-title">後述している余白がない例。区別しやすいように、敢えて色を変えています。</p>
+                                　上の画像のように写真の周りに空白がないと、
+                                非常に読みずらい、苦しい見た目になることが分かると思います。<br>
+                                　空白はCSSでmargin、またはpaddingで設定できます。要素間の空白を「margin」、
+                                要素とその枠線までの空白を「padding」で指定できます。
+                                下に記述してあるコードをコピペして、CSSファイルでmarginとpaddingを自由に指定してみましょう。<br>
+                                余談ですが、marginとpaddingを区切る枠線をborder、枠線の高さをheightと呼びます。
+                                <a href="image/margin-padding.png" data-lightbox="group"><img class="top-margin" src="image/margin-padding.png" alt="余白説明"></a><br>
+                                </li>
+                                <input id="acd-check5" class="acd-check" type="checkbox">
+                                <label class="acd-label" for="acd-check5">HTMLファイル</label>
+                                <div class="acd-content">
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;サンプルコードです&lt;/title&gt;
+        &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;Item 2&lt;/div&gt;
+        &lt;div class=&quot;item&quot;&gt;Item 3&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                                <input id="acd-check6" class="acd-check" type="checkbox">
+                                <label class="acd-label" for="acd-check6">CSSファイル</label>
+                                <div class="acd-content">
+                                    <pre><code>.item {
+    background-color: #0bd;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}</code></pre>
+                                </div>
+                        </ul>
+                    </div>
+                
+                <header class="chapter-title">
+                    <h2 id="chapter5">5. まとめ</h2>
+                </header>
+                <p>　まずはお疲れ様でした。一回聞いて触っただけでは理解できないと思いますし、
+                    説明が不十分な箇所、そもそも説明が行っていない箇所もあります。
+                    というか自分も勉強中なのであまり適切でない説明が行われていたかもしれません。
+                    なので、気になった所・疑問に思った事は検索をかけてみたり質問してみたりしてください。
+                    きっといい答えが返ってきます。<br><br>
+                    　皆さんがWebサイトを作成するときは、是非とも読み手の事を考えて
+                    使いやすいWebサイトを作るよう心がけてみて下さい。
+                    その際に、この講義が少しでもタメになれば幸いです。</p>
+            </article>
+
+            <aside>
+                <h3 class="sub-title">目次</h3>
+                <a href="#chapter1">1. そもそもHTMLとは？</a><br>
+                <a href="#chapter2">2. HTMLを体験しよう</a><br>
+                <a href="#chapter3">3. HTMLの骨組み</a><br>
+                <a href="#chapter4">4. Webデザインとは？</a><br>
+                <a href="#chapter5">5.まとめ</a>
+            </aside>
+        </div>
+
+        <footer>
+        <!-- to page top -->
+            <a class="pagetop" href="#"><div class="pagetop_arrow"></div></a>
+        
+        <!-- copy right -->
+            <div class="wrapper">
+                <p><small>&copy; 2024 Yukineko.</small></p>
+            </div>
+        </footer>
+    </body>
+</html>

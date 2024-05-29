@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------ */
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    position: relative;
+    font-family: "M PLUS Rounded 1c", "マメロン 3 Hi Regular", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    background-color: #fffef9;
+    background-image: url(../image/background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 80vh;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.4rem;
+}
+a {
+    text-decoration: none;
+    color: #432;
+}
+img {
+    max-width: 100%;
+}
+.top-margin {
+    margin-top: 20px;
+}
+.list ul li {
+    padding: 10px 0;
+    list-style: inside;
+    margin-left: 1.5rem;
+    text-indent: -1.5rem;
+}
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3%;
+}
+.m-plus-rounded-1c-regular {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* HOME
+------------------------------ */
+.home-content {
+    text-align: center;
+    margin-top: 5%;
+}
+.home-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 20px;
+}
+
+/* MAIN
+------------------------------ */
+article {
+    width: 70%;
+}
+aside {
+    width: 25%;
+    line-height: 1.9;
+}
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.chapter-title {
+    position: relative;
+    padding-top: 4px;
+    margin: 25px 0;
+    border-bottom: 4px #0bd dotted;
+}
+.sub-title {
+    position: relative;
+    padding-top: 20px;
+    margin: 20px 0;
+    border-bottom: 2px #0bd double;
+}
+.sub-content {
+    color: #777;
+    margin-bottom: 20px;
+}
+.width-line {
+    display: flex;
+    gap: 25px;
+}
+.img-title {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.acd-check{
+    display: none;
+}
+.acd-label{
+    background: #0068b7;
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+    padding: 10px;
+    position: relative;
+}
+.acd-label:after{
+    background: #00479d;
+    box-sizing: border-box;
+    content: '\f067';
+    display: block;
+    font-family: "Font Awesome 5 Free";
+    height: 47px;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+.acd-content{
+    border: 1px solid #333;
+    display: block;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .3s;
+    visibility: hidden;
+}
+.acd-check:checked + .acd-label:after{
+    content: '\f068';
+}
+.acd-check:checked + .acd-label + .acd-content{
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+article p {
+    margin-bottom: 1rem;
+}
+
+/* FOOTER
+------------------------------ */
+footer {
+    text-align: center;
+    padding: 30px 0;
+}
+footer p {
+    color: #432;
+    font-size: 1rem;
+}
+.pagetop {
+    height: 45px;
+    width: 45px;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: #fff;
+    border: solid 2px #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.pagetop_arrow {
+    height: 10px;
+    width: 10px;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    transform: translateY(20%) rotate(-45deg);
+}
